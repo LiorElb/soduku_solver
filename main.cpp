@@ -11,9 +11,7 @@ bool solve(vector<vector<int>> &board)
     int const &i = location.first;
     int const &j = location.second;
     if (i == -1)
-    {
         return true;
-    }
 
     for(int k = 1; k <= 9; k++)
     {
