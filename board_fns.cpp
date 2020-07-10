@@ -18,7 +18,7 @@ bool is_valid(vector<vector<int>> const &board)
         int const &num = board[i][j];
         if (num != 0) 
         {
-          int const square_idx = (i / 3 ) * 3 + j / 3;  // squares are 3x3 indexed like so - |_0_|,|_1_|,|_2_|
+          int const square_idx = i - (i % 3) + (j / 3);  // squares are 3x3 indexed like so - |_0_|,|_1_|,|_2_|
                                                         //                                   |_3_|,|_4_|,|_5_|
                                                         //                                   |_6_|,|_7_|,|_8_|
           if (rows[i].count(num) != 0 || columns[j].count(num) != 0 || squares[square_idx].count(num) != 0)
